@@ -1,11 +1,14 @@
 export const whoLikesIt = (arr: Array<string>): string => {
-  let message: string = "no one likes this";
+  const messageEnd = `like${arr.length < 2 ? "s" : ""} this`;
+  let message: string = `no one ${messageEnd}`;
+
   if (!arr.length) message;
-  if (arr.length === 1) message = `${arr[0]} likes this`;
-  if (arr.length === 2) message = `${arr[0]} and ${arr[1]} like this`;
+  if (arr.length === 1) message = `${arr[0]} ${messageEnd}`;
+  if (arr.length === 2) message = `${arr[0]} and ${arr[1]} ${messageEnd}`;
   if (arr.length === 3)
-    message = `${arr[0]}, ${arr[1]} and ${arr[2]} like this`;
+    message = `${arr[0]}, ${arr[1]} and ${arr[2]} ${messageEnd}`;
   if (arr.length > 3)
-    message = `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`;
+    message = `${arr[0]}, ${arr[1]} and ${arr.length - 2} others ${messageEnd}`;
+
   return message;
 };

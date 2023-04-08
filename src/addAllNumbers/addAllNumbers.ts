@@ -1,5 +1,5 @@
 export const addAllNumbers = (...numbers: Array<number>): number => {
-  // using the built in redeuce function
+  // using the built in reduce function
   // const sum = numbers.reduce((a: number, b: number) => a + b);
 
   let sum: number = 0;
